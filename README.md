@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/univers629/XMillet/main/imgs/icon.webp" width="160" height="160" alt="XMillet icon" />
+<img src="https://raw.githubusercontent.com/Xposed-Modules-Repo/io.github.univers629.millet/main/icon.png" width="160" height="160" alt="XMillet icon" />
 
 # XMillet
 
