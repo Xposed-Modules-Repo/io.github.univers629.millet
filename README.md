@@ -1,8 +1,15 @@
+<details>
+<summary></summary>
+
+# .
+
+</details>
+
 <div align="center">
 
 <img src="icon.png" width="160" height="160" alt="XMillet icon" />
 
-## XMillet
+# XMillet
 
 ### 面向小米澎湃 OS 官方墓碑机制（Millet）的现代 LSPosed 控制与统计面板
 
