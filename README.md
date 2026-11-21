@@ -67,28 +67,28 @@ LSPosed module for Xiaomi's official tombstone mechanism (Millet). Built on LibX
 
 1. 下载并安装 APK
 2. 在 LSPosed 管理器中启用 XMillet，仅勾选「系统框架（`system`）」与「电量与性能（`com.miui.powerkeeper`）」作用域
-3. 重启系统，或等待 API 102 免重启热重载完成
+3. 重启系统完成首次注入（已注入进程的后续更新可由 API 102 热重载完成）
 4. 打开 XMillet，按引导完成初始化检测
 
 ## 实机核验
 
-四台不同代际设备的实机核验 Hook 实装情况如下（分母为当前版本探测点位：系统侧 34 个、电量侧 29 个）：
+四台不同代际设备的实机核验 Hook 实装情况如下（分母为当前版本探测点位：系统侧 34 个、电量侧 26 个）：
 
 | 设备 | 代号 | 系统版本 | Android | 内核 | Root | LSPosed | Hook 实装（系统侧 + 电量侧） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Redmi K40 游戏增强版 (M2012K10C) | `ares` | OS1.0.4.0.TKJCNXM | 13 (SDK 33) | `4.14.186-g844fd19c6` | Magisk | v2.2.1-log (7940) | 25/34 + 25/29 |
-| Xiaomi Pad 5 Pro 12.4 (22081281AC) | `dagu` | OS2.0.10.0.ULZCNXM | 14 (SDK 34) | `4.19.157-perf-gb57830672689` | Magisk | v2.2.1-log (7939) | 25/30* + 25/28* |
-| REDMI K80 Pro (24122RKC7C) | `miro` | OS3.0.304.0.WOMCNXM | 16 (SDK 36) | `6.6.118-android15-8-gc44b714366cc-abogki519650608-4k` | KernelSU | v2.2.1 (7939) | 28/34 + 17/29 |
+| Redmi K40 游戏增强版 (M2012K10C) | `ares` | OS1.0.4.0.TKJCNXM | 13 (SDK 33) | `4.14.186-g844fd19c6` | Magisk | v2.2.1-log (7940) | 25/34 + 22/26 |
+| Xiaomi Pad 5 Pro 12.4 (22081281AC) | `dagu` | OS2.0.10.0.ULZCNXM | 14 (SDK 34) | `4.19.157-perf-gb57830672689` | Magisk | v2.2.1-log (7939) | 28/34 + 23/26 |
+| REDMI K80 Pro (24122RKC7C) | `miro` | OS3.0.304.0.WOMCNXM | 16 (SDK 36) | `6.6.118-android15-8-gc44b714366cc-abogki519650608-4k` | KernelSU | v2.2.1 (7939) | 28/34 + 16/26 |
 | Xiaomi 15 (24129PN74C) | `dada` | OS4.0.4.0.XOCCNXM | 17 (SDK 37) | `6.6.118-android15-8-gf72a02f47f4b-abogki551678766-4k` | KernelSU | v2.2.1 (7939) | 29/30* + 14/28* |
 
-> `ares` 与 `miro` 数据为当前版本默认关闭 `simplifyLog` 下的实测值（开启 `simplifyLog` 后可额外启用 `S16–S18` 等日志点位）；标注 `*` 的 `dagu` 与 `dada` 为早期 `30 + 28` 点位基线下的历史核验数据。
+> `ares`、`dagu` 与 `miro` 为当前版本默认关闭 `simplifyLog` 下的实测值（开启 `simplifyLog` 后可额外启用 `S16–S18` 等日志点位）；标注 `*` 的 `dada` 为早期 `30 + 28` 点位基线下的历史核验数据，尚未按当前基线复测。
 
 ## 使用 / Usage
 
 - **主页**：系统服务连接状态、当前冻结概览与快捷开关
-- **应用**：逐应用查看进程、UID、冻结状态，并调整策略
-- **统计**：墓碑统计与冻结耗时
-- **日志**：按级别筛选、搜索与导出
+- **进程列表**：按应用查看进程、UID、冻结状态与内存占用
+- **墓碑统计**：冻结 / 解冻次数、唤醒原因与分时分布
+- **应用策略**：逐应用免冻、消息应用、强力冻结等策略配置
 - **设置**：策略默认值、日志开关、备份与恢复、诊断
 
 ## 下载 / Download
