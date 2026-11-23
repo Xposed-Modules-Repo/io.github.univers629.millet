@@ -32,7 +32,7 @@ LSPosed module for Xiaomi's official tombstone mechanism (Millet). Built on LibX
 
 - **支持范围**：Android 13+（`minSdk 33`），实机适配 HyperOS 1.0 / 2.0 / 3.0 / 4.0（Android 13 ~ 17）
 - **LSPosed 作用域**：仅需勾选「系统框架（`system`）」与「电量与性能（`com.miui.powerkeeper`）」
-- **交互设计**：基于 [Miuix](https://github.com/compose-miuix-ui/miuix)（`0.9.4`）构建，支持液态玻璃悬浮底栏、实时毛玻璃模糊、动态取色（Monet）、首次引导（OOBE）与桌面图标隐藏
+- **交互设计**：基于 [Miuix](https://github.com/compose-miuix-ui/miuix)（`0.9.5-beta03`）构建，支持液态玻璃悬浮底栏、玻璃顶栏、渐进式模糊、实时毛玻璃模糊、动态取色（Monet）、首次引导（OOBE）与桌面图标隐藏
 
 ## 界面预览
 
@@ -72,16 +72,16 @@ LSPosed module for Xiaomi's official tombstone mechanism (Millet). Built on LibX
 
 ## 实机核验
 
-四台不同代际设备的实机核验 Hook 实装情况如下（分母为当前版本探测点位：系统侧 34 个、电量侧 26 个）：
+四台不同代际设备的实机核验 Hook 实装情况如下（分母为当前版本探测点位：系统侧 37 个、电量侧 31 个）：
 
 | 设备 | 代号 | 系统版本 | Android | 内核 | Root | LSPosed | Hook 实装（系统侧 + 电量侧） |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Redmi K40 游戏增强版 (M2012K10C) | `ares` | OS1.0.4.0.TKJCNXM | 13 (SDK 33) | `4.14.186-g844fd19c6` | Magisk | v2.2.1-log (7940) | 25/34 + 22/26 |
-| Xiaomi Pad 5 Pro 12.4 (22081281AC) | `dagu` | OS2.0.10.0.ULZCNXM | 14 (SDK 34) | `4.19.157-perf-gb57830672689` | Magisk | v2.2.1-log (7939) | 28/34 + 23/26 |
-| REDMI K80 Pro (24122RKC7C) | `miro` | OS3.0.304.0.WOMCNXM | 16 (SDK 36) | `6.6.118-android15-8-gc44b714366cc-abogki519650608-4k` | KernelSU | v2.2.1 (7939) | 28/34 + 16/26 |
+| Redmi K40 游戏增强版 (M2012K10C) | `ares` | OS1.0.4.0.TKJCNXM | 13 (SDK 33) | `4.14.186-g844fd19c6` | Magisk | v2.2.1-log (7940) | 26/37 + 27/31 |
+| Xiaomi Pad 5 Pro 12.4 (22081281AC) | `dagu` | OS2.0.10.0.ULZCNXM | 14 (SDK 34) | `4.19.157-perf-gb57830672689` | Magisk | v2.2.1-log (7939) | 29/37 + 28/31 |
+| REDMI K80 Pro (24122RKC7C) | `miro` | OS3.0.304.0.WOMCNXM | 16 (SDK 36) | `6.6.118-android15-8-gc44b714366cc-abogki519650608-4k` | KernelSU | v2.2.1 (7940) | 31/37 + 20/31 |
 | Xiaomi 15 (24129PN74C) | `dada` | OS4.0.4.0.XOCCNXM | 17 (SDK 37) | `6.6.118-android15-8-gf72a02f47f4b-abogki551678766-4k` | KernelSU | v2.2.1 (7939) | 29/30* + 14/28* |
 
-> `ares`、`dagu` 与 `miro` 为当前版本默认关闭 `simplifyLog` 下的实测值（开启 `simplifyLog` 后可额外启用 `S16–S18` 等日志点位）；标注 `*` 的 `dada` 为早期 `30 + 28` 点位基线下的历史核验数据，尚未按当前基线复测。
+> `ares`、`dagu` 与 `miro` 为当前版本（系统侧 37、电量侧 31）默认关闭 `simplifyLog` 下的实测值（开启 `simplifyLog` 后可额外启用 `S16–S18` 等日志点位）；标注 `*` 的 `dada` 为早期 `30 + 28` 点位基线下的历史核验数据，尚未按当前基线复测。
 
 ## 使用 / Usage
 
@@ -122,3 +122,4 @@ https://github.com/univers629/XMillet/issues
 模块会修改系统冻结与省电行为，使用前请确认设备与系统版本符合要求；因使用本模块导致的异常由使用者自行承担。
 
 The module modifies system freezing and power-saving behavior; confirm the device and system version meet the requirements before use. Any anomaly caused by using this module is borne by the user.
+
